@@ -6,6 +6,8 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using System.Data.Entity;
+using NewsEngine.Models;
 
 namespace NewsEngine
 {
@@ -16,6 +18,9 @@ namespace NewsEngine
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            // Initialize the article database.
+            Database.SetInitializer(new ArticleDatabaseInitializer());
         }
     }
 }
