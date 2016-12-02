@@ -81,7 +81,7 @@ namespace NewsEngine.Models
                     ArticleID = 4,
                     ArticleName = "Samsung Galaxy S8 is close",
                     Description = "The south coreeans will launch next year in march thei new S model, 8 is the number and it will be awesome",
-                    ImagePath = "s8.png",
+                    ImagePath = "samsung.png",
                     CategoryID = 2
                 },
                 new Article
@@ -113,7 +113,7 @@ namespace NewsEngine.Models
                     ArticleID = 8,
                     ArticleName = "Art.8",
                     Description = "Art.8 Description",
-                    ImagePath = "",
+                    ImagePath = "art8.png",
                     CategoryID = 3
                 },
                 new Article
