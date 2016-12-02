@@ -6,11 +6,12 @@ using System.Web;
 
 namespace NewsEngine.Models
 {
-    public class ArticleDatabaseInitializer : DropCreateDatabaseAlways<ArticleContext>
+    public class ArticleDatabaseInitializer : DropCreateDatabaseIfModelChanges<ArticleContext>
     {
         protected override void Seed(ArticleContext context)
         {
-
+            GetCategories().ForEach(c => context.Categories.Add(c));
+            GetArticles().ForEach(p => context.Articles.Add(p));
         }
 
         private static List<Category> GetCategories()

@@ -53,6 +53,7 @@
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" href="ArticleList">Articles</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
@@ -73,6 +74,26 @@
                 </div>
             </div>
         </div>
+
+        <div id ="TitleContent" style="text-align: center">
+            <a runat="server" href="~/">
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/logo.png" BorderStyle="None" />
+            </a>
+        </div>
+
+        <div id="CategoryMenu" style="text-align: center">
+            <asp:ListView ID="categoryList" ItemType="NewsEngine.Models.Category" runat="server" SelectMethod="GetCategories">
+                <ItemTemplate>
+                    <b style="font-size: large; font-style: normal">
+                        <a href="ArticleList.aspx?id=<%#: Item.CategoryID %>">
+                            <%#: Item.CategoryName %>
+                        </a>
+                    </b>
+                </ItemTemplate>
+                <ItemSeparatorTemplate>  |  </ItemSeparatorTemplate>
+            </asp:ListView>
+        </div>
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
