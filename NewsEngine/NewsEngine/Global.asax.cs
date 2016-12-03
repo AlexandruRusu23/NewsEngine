@@ -8,6 +8,7 @@ using System.Web.Security;
 using System.Web.SessionState;
 using System.Data.Entity;
 using NewsEngine.Models;
+using NewsEngine.Logic;
 
 namespace NewsEngine
 {
@@ -21,6 +22,10 @@ namespace NewsEngine
 
             // Initialize the article database.
             Database.SetInitializer(new ArticleDatabaseInitializer());
+
+            // Create the custom role and user.
+            RoleActions roleActions = new RoleActions();
+            roleActions.AddUserAndRole();
         }
     }
 }
