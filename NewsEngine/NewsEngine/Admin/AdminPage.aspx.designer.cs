@@ -13,6 +13,33 @@ namespace NewsEngine.Admin {
     public partial class AdminPage {
         
         /// <summary>
+        /// LabelRemoveCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelRemoveCategory;
+        
+        /// <summary>
+        /// DropDownRemoveCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownRemoveCategory;
+        
+        /// <summary>
+        /// RemoveCategoryButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button RemoveCategoryButton;
+        
+        /// <summary>
         /// LabelAddCategory control.
         /// </summary>
         /// <remarks>

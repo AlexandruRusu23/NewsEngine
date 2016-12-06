@@ -6,7 +6,7 @@ using System.Web;
 
 namespace NewsEngine.Models
 {
-    public class ArticleDatabaseInitializer : DropCreateDatabaseIfModelChanges<ArticleContext>
+    public class ArticleDatabaseInitializer : DropCreateDatabaseAlways<ArticleContext>
     {
         protected override void Seed(ArticleContext context)
         {
@@ -26,7 +26,7 @@ namespace NewsEngine.Models
                 new Category
                 {
                     CategoryID = 2,
-                    CategoryName = "Tehnology"
+                    CategoryName = "Technology"
                 },
                 new Category
                 {

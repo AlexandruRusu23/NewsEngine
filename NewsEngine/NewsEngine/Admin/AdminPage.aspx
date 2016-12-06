@@ -3,6 +3,29 @@
 
     <h1>Administration</h1>
     <hr />
+
+    <h3>Add Category:</h3>
+    <table>
+
+    </table>
+    <p></p>
+    <p></p>
+
+    <h3>Remove Category:</h3>
+    <table>
+        <tr>
+            <td><asp:Label ID="LabelRemoveCategory" runat="server">Category:</asp:Label></td>
+            <td>
+                <asp:DropDownList ID="DropDownRemoveCategory" runat="server" ItemType="NewsEngine.Models.Category"
+                    SelectMethod="GetCategories" DataTextField="CategoryName" DataValueField="CategoryID">
+                </asp:DropDownList>
+            </td>
+        </tr>
+    </table>
+    <p></p>
+    <p></p>
+    <asp:Button ID="RemoveCategoryButton" runat="server" Text="Remove Category" OnClick="RemoveCategoryButton_Click" CausesValidation="false" />
+
     <h3>Add Article:</h3>
     <table>
         <tr>
