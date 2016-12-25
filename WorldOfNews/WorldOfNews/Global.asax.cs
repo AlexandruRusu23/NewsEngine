@@ -6,6 +6,9 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using System.Data.Entity;
+using WorldOfNews.Models;
+using WorldOfNews.Roles;
 
 namespace WorldOfNews
 {
@@ -16,6 +19,11 @@ namespace WorldOfNews
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //Database.SetInitializer(new ArticleDatabaseInitializer());
+
+            RoleActions roleActions = new RoleActions();
+            roleActions.AddUserAndRole("Editor23", "canEdit@gmail.com", "Pa$$word1", "roleEditor");
         }
     }
 }

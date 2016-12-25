@@ -18,12 +18,6 @@ namespace WorldOfNews.Account
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
             var user = new ApplicationUser() { UserName = Username.Text, Email = Email.Text };
 
-            //if (!Roles.RoleExists("normalUser"))
-            //{
-            //    Roles.CreateRole("normalUser");
-            //}
-            //Roles.AddUsersToRole(new[] { user.UserName }, "normalUser");
-
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)
             {
