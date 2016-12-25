@@ -6,7 +6,6 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
-using WorldOfNews.Logic;
 
 namespace WorldOfNews
 {
@@ -17,9 +16,6 @@ namespace WorldOfNews
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            RoleAction roleAction = new RoleAction();
-            roleAction.AddUserAndRole();
         }
     }
 }
