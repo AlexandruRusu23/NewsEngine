@@ -184,6 +184,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Registered\RegisteredPage.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -385,6 +386,7 @@
     </Compile>
     <Compile Include="Editor\AddArticles.cs" />
     <Compile Include="Editor\AddCategories.cs" />
+    <Compile Include="Editor\AddComments.cs" />
     <Compile Include="Editor\EditorPage.aspx.cs">
       <DependentUpon>EditorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -399,8 +401,16 @@
     <Compile Include="Models\ArticleContext.cs" />
     <Compile Include="Models\ArticleDatabaseInitializer.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registered\RegisteredPage.aspx.cs">
+      <DependentUpon>RegisteredPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registered\RegisteredPage.aspx.designer.cs">
+      <DependentUpon>RegisteredPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Roles\RoleActions.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

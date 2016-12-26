@@ -84,6 +84,13 @@ namespace WorldOfNews
             }
             else
                 adminLink.Visible = false;
+
+            if (HttpContext.Current.User.IsInRole("roleRegistered"))
+            {
+                registeredLink.Visible = true;
+            }
+            else
+                registeredLink.Visible = false;
         }
         public IQueryable<Category> GetCategories()
         {

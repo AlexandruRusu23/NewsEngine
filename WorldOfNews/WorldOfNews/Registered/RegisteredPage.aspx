@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdminPage.aspx.cs" Inherits="WorldOfNews.Admin.AdminPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RegisteredPage.aspx.cs" Inherits="WorldOfNews.Registered.RegisteredPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
-    <h1>Administration</h1>
+    
+    <h1>Contribution</h1>
     <hr />
     <p></p>
     
