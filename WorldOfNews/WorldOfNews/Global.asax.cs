@@ -22,8 +22,8 @@ namespace WorldOfNews
 
             //Database.SetInitializer(new ArticleDatabaseInitializer());
 
-            RoleActions roleActions = new RoleActions();
-            roleActions.AddUserAndRole("Editor23", "canEdit@gmail.com", "Pa$$word1", "roleEditor");
+            //RoleActions roleActions = new RoleActions();
+            //roleActions.AddUserAndRole("Admin23", "canAdmin@gmail.com", "Pa$$word1", "roleAdmin");
         }
     }
 }

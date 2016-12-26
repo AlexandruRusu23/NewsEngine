@@ -71,10 +71,19 @@ namespace WorldOfNews
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(HttpContext.Current.User.IsInRole("roleEditor"))
+            if (HttpContext.Current.User.IsInRole("roleEditor"))
             {
                 editorLink.Visible = true;
             }
+            else
+                editorLink.Visible = false;
+
+            if (HttpContext.Current.User.IsInRole("roleAdmin"))
+            {
+                adminLink.Visible = true;
+            }
+            else
+                adminLink.Visible = false;
         }
         public IQueryable<Category> GetCategories()
         {
