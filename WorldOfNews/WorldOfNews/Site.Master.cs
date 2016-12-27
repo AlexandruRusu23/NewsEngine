@@ -74,9 +74,13 @@ namespace WorldOfNews
             if (HttpContext.Current.User.IsInRole("roleEditor"))
             {
                 editorLink.Visible = true;
+                proposedLink.Visible = true;
             }
             else
+            {
                 editorLink.Visible = false;
+                proposedLink.Visible = false;
+            }
 
             if (HttpContext.Current.User.IsInRole("roleAdmin"))
             {

@@ -48,7 +48,7 @@
             <p></p>
             <p></p>
             
-            <asp:Button CssClass="btn btn-default" ID="AddCommentButton" runat="server" Text="Add Comment" OnClick="AddCommentButton_Click"/>
+            <asp:Button CssClass="btn btn-primary" ID="AddCommentButton" runat="server" Text="Add Comment" OnClick="AddCommentButton_Click"/>
 
             <asp:Label ID="LabelAddStatus" runat="server"></asp:Label>    
             

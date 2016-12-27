@@ -178,6 +178,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Editor\EditorPage.aspx" />
+    <Content Include="Editor\ProposedArticles.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -394,6 +395,13 @@
     <Compile Include="Editor\EditorPage.aspx.designer.cs">
       <DependentUpon>EditorPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Editor\ProposedArticles.aspx.cs">
+      <DependentUpon>ProposedArticles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Editor\ProposedArticles.aspx.designer.cs">
+      <DependentUpon>ProposedArticles.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -403,7 +411,9 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ProposedArticle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registered\AddProposedArticles.cs" />
     <Compile Include="Registered\RegisteredPage.aspx.cs">
       <DependentUpon>RegisteredPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

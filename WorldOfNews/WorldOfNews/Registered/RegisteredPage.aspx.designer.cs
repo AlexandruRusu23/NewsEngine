@@ -13,21 +13,93 @@ namespace WorldOfNews.Registered {
     public partial class RegisteredPage {
         
         /// <summary>
-        /// UserManipulationGridView control.
+        /// LabelAddCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView UserManipulationGridView;
+        protected global::System.Web.UI.WebControls.Label LabelAddCategory;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// DropDownAddCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownAddCategory;
+        
+        /// <summary>
+        /// LabelAddName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelAddName;
+        
+        /// <summary>
+        /// AddArticleName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox AddArticleName;
+        
+        /// <summary>
+        /// LabelAddDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelAddDescription;
+        
+        /// <summary>
+        /// AddArticleDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox AddArticleDescription;
+        
+        /// <summary>
+        /// LabelAddImageFile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelAddImageFile;
+        
+        /// <summary>
+        /// ArticleImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload ArticleImage;
+        
+        /// <summary>
+        /// AddArticleButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddArticleButton;
+        
+        /// <summary>
+        /// LabelAddStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelAddStatus;
     }
 }

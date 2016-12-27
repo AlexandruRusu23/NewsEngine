@@ -56,7 +56,7 @@
         <tr>
             <td><asp:Label ID="LabelAddDescription" AssociatedControlID="AddArticleDescription" runat="server">Description:</asp:Label></td>
             <td>
-                <asp:TextBox ID="AddArticleDescription" runat="server"></asp:TextBox>
+                <asp:TextBox ID="AddArticleDescription" Width="350px" Height="150px" TextMode="MultiLine" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator CssClass="text-danger" runat="server" ControlToValidate="AddArticleDescription" ErrorMessage="The description field is required." ValidationGroup="addArticleGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>

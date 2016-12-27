@@ -12,6 +12,7 @@ namespace WorldOfNews.Models
         {
             GetCategories().ForEach(c => context.Categories.Add(c));
             GetArticles().ForEach(c => context.Articles.Add(c));
+            GetProposedArticles().ForEach(c => context.ProposedArticles.Add(c));
             GetComments().ForEach(c => context.Comments.Add(c));
         }
 
@@ -96,6 +97,40 @@ namespace WorldOfNews.Models
 
             return articles;
         }
+
+        private static List<ProposedArticle> GetProposedArticles()
+        {
+            var articles = new List<ProposedArticle>
+            {
+                new ProposedArticle
+                {
+                    ArticleID = 1,
+                    ArticleName = "Name Proposed",
+                    CategoryID = 2,
+                    ImagePath = "image3.png",
+                    Description = "proposed article description"
+                },
+                new ProposedArticle
+                {
+                    ArticleID = 2,
+                    ArticleName = "Name Proposed",
+                    CategoryID = 4,
+                    ImagePath = "image3.png",
+                    Description = "proposed article description"
+                },
+                new ProposedArticle
+                {
+                    ArticleID = 3,
+                    ArticleName = "Name Proposed",
+                    CategoryID = 4,
+                    ImagePath = "image3.png",
+                    Description = "proposed article description"
+                }
+            };
+
+            return articles;
+        }
+
         private static List<Comment> GetComments()
         {
             var comments = new List<Comment>
