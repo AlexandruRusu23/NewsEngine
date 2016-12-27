@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using WorldOfNews.Models;
 using System.Web.ModelBinding;
+using System.Data.SqlClient;
 
 namespace WorldOfNews
 {
@@ -24,7 +25,24 @@ namespace WorldOfNews
             {
                 query = query.Where(p => p.CategoryID == categoryId).OrderBy(p => p.ArticleName);
             }
+
+            string searchInput;
+            searchInput = (string)Session["searchInput"];
+
+            if (!string.IsNullOrEmpty(searchInput))
+            {
+                query = query.Where(p => (p.ArticleName.Contains(searchInput) || p.Description.Contains(searchInput) ));
+                Session["searchInput"] = "";
+            }
+
             return query;
+        }
+
+        protected void SearchArticles_Click(object sender, EventArgs e)
+        {
+            Session["searchInput"] = searchTextBox.Text;
+            searchTextBox.Text = "";
+            Response.Redirect(Request.RawUrl);
         }
     }
 }
