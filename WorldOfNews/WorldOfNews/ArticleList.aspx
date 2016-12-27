@@ -5,10 +5,11 @@
             <div style="float:right">
             <asp:Button CssClass="btn btn-success" runat="server" Text="Search" OnClick="SearchArticles_Click"/></div>
             <div style="float:right; margin-right:5px">
-                <asp:TextBox ID="searchTextBox" CssClass="form-control" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator CssClass="text-danger" runat="server" ControlToValidate="searchTextBox" ErrorMessage="Search field can not be empty."></asp:RequiredFieldValidator>
+                <asp:TextBox ID="searchTextBox" ValidationGroup="searchGroup" CssClass="form-control" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator CssClass="text-danger" runat="server" ControlToValidate="searchTextBox" ValidationGroup="searchGroup" ErrorMessage="Search field can not be empty."></asp:RequiredFieldValidator>
             </div>
         </div>
+
         <div>
             <hgroup>
                 <h2><%: Page.Title %></h2>
