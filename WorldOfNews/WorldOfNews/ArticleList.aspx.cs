@@ -22,7 +22,7 @@ namespace WorldOfNews
             IQueryable<Article> query = _db.Articles;
             if (categoryId.HasValue && categoryId > 0)
             {
-                query = query.Where(p => p.CategoryID == categoryId);
+                query = query.Where(p => p.CategoryID == categoryId).OrderBy(p => p.ArticleName);
             }
             return query;
         }

@@ -1,12 +1,18 @@
 ﻿<%@ Page Title="Articles" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ArticleList.aspx.cs" Inherits="WorldOfNews.ArticleList" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-     <section>
+    <section>
+        <div>
+            <div style="float:right">
+            <asp:Button CssClass="btn btn-success" runat="server" Text="Search"/></div>
+            <div style="float:right; margin-right:5px">
+            <asp:TextBox CssClass="form-control" runat="server"></asp:TextBox></div>
+        </div>
         <div>
             <hgroup>
                 <h2><%: Page.Title %></h2>
             </hgroup>
-
-            <asp:ListView ID="articleList" runat="server" 
+            <br />
+            <asp:ListView ID="articleList" runat="server"
                 DataKeyNames="ArticleID" GroupItemCount="4"
                 ItemType="WorldOfNews.Models.Article" SelectMethod="GetArticles">
                 <EmptyDataTemplate>
