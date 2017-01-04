@@ -16,6 +16,7 @@ namespace WorldOfNews.Models
         public DbSet<Category> Categories { get; set; }
         public DbSet<Article> Articles { get; set; }
         public DbSet<ProposedArticle> ProposedArticles { get; set; }
+        public DbSet<ExternArticle> ExternArticles { get; set; }
         public DbSet<Comment> Comments { get; set; }
     }
 }

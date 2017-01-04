@@ -13,6 +13,7 @@ namespace WorldOfNews.Models
             GetCategories().ForEach(c => context.Categories.Add(c));
             GetArticles().ForEach(c => context.Articles.Add(c));
             GetProposedArticles().ForEach(c => context.ProposedArticles.Add(c));
+            GetExternArticles().ForEach(c => context.ExternArticles.Add(c));
             GetComments().ForEach(c => context.Comments.Add(c));
         }
 
@@ -125,6 +126,23 @@ namespace WorldOfNews.Models
                     CategoryID = 4,
                     ImagePath = "image3.png",
                     Description = "proposed article description"
+                }
+            };
+
+            return articles;
+        }
+
+        private static List<ExternArticle> GetExternArticles()
+        {
+            var articles = new List<ExternArticle>
+            {
+                new ExternArticle
+                {
+                    ArticleID = 1,
+                    ArticleName = "Clubul dorit de Gigi Becali, patronat de un om de afaceri sirian",
+                    Link = "http://www.digisport.ro/Sport/FOTBAL/Competitii/Liga+1/Clubul+dorit+de+Gigi+Becali+patronat+de+un+om+de+afaceri+sirian",
+                    ImagePath = "gigi.jpg",
+                    CategoryID = 4
                 }
             };
 

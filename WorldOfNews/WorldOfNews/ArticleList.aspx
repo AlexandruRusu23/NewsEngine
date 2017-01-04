@@ -80,4 +80,76 @@
             </asp:ListView>
         </div>
     </section>
+
+    <section>
+        <div>
+            <hgroup>
+                <h2><%: Page.Title %> from another sources</h2>
+            </hgroup>
+            <br />
+            <asp:ListView ID="ListView1" runat="server"
+                DataKeyNames="ArticleID" GroupItemCount="4"
+                ItemType="WorldOfNews.Models.ExternArticle" SelectMethod="GetExternArticles">
+                <EmptyDataTemplate>
+                    <table >
+                        <tr>
+                            <td>No data was returned.</td>
+                        </tr>
+                    </table>
+                </EmptyDataTemplate>
+                <EmptyItemTemplate>
+                    <td/>
+                </EmptyItemTemplate>
+                <GroupTemplate>
+                    <tr id="itemPlaceholderContainer" runat="server">
+                        <td id="itemPlaceholder" runat="server"></td>
+                    </tr>
+                </GroupTemplate>
+                <ItemTemplate>
+                    <td runat="server">
+                        <table>
+                            <tr>
+                                <td>
+                                    <a href="<%#: Item.Link %>">
+                                        <img src="/Images/<%#:Item.ImagePath%>"
+                                            width="140" height="110" style="border: solid" /></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="<%#:Item.Link%>">
+                                        <span>
+                                            <%#:Item.ArticleName%>
+                                        </span>
+                                    </a>
+                                    <br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </table>
+                        </p>
+                    </td>
+                </ItemTemplate>
+                <LayoutTemplate>
+                    <table style="width:100%;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table id="groupPlaceholderContainer" runat="server" style="width:100%">
+                                        <tr id="groupPlaceholder"></tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr></tr>
+                        </tbody>
+                    </table>
+                </LayoutTemplate>
+            </asp:ListView>
+        </div>
+    </section>
 </asp:Content>

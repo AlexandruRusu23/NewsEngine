@@ -410,6 +410,7 @@
     <Compile Include="Models\ArticleDatabaseInitializer.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\ExternArticle.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ProposedArticle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

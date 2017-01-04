@@ -39,6 +39,28 @@ namespace WorldOfNews
             return query;
         }
 
+        public IQueryable<ExternArticle> GetExternArticles([QueryString("id")] int? categoryId)
+        {
+            var _db = new WorldOfNews.Models.ArticleContext();
+            IQueryable<ExternArticle> query = _db.ExternArticles;
+            if (categoryId.HasValue && categoryId > 0)
+            {
+                query = query.Where(p => p.CategoryID == categoryId);
+                query = query.OrderBy(p => p.ArticleName);
+            }
+
+            string searchInput;
+            searchInput = (string)Session["searchInput"];
+
+            if (!string.IsNullOrEmpty(searchInput))
+            {
+                query = query.Where(p => (p.ArticleName.Contains(searchInput)));
+                Session["searchInput"] = "";
+            }
+
+            return query;
+        }
+
         protected void SearchArticles_Click(object sender, EventArgs e)
         {
             Session["searchInput"] = searchTextBox.Text;
