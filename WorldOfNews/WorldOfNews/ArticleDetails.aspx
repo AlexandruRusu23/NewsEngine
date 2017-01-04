@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ArticleDetails.aspx.cs" Inherits="WorldOfNews.ArticleDetails" %>
+﻿<%@ Page Title="World of News" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ArticleDetails.aspx.cs" Inherits="WorldOfNews.ArticleDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:FormView ID="articleDetail" runat="server" ItemType="WorldOfNews.Models.Article" SelectMethod ="GetArticle" RenderOuterTable="false">
         <ItemTemplate>

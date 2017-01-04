@@ -6,7 +6,7 @@
         <h1>World of News</h1>
         <p class="lead"> We're all about news for every category you could imagine. You can read the news, rate them, comment your thoughts and
         why not, create news by yourself.</p>
-        <p><a href="Articles" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <p><a href="ArticleList" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
     </div>
 
     <div class="row">

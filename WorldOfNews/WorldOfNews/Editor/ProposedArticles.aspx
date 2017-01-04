@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProposedArticles.aspx.cs" Inherits="WorldOfNews.Editor.ProposedArticles" %>
+﻿<%@ Page Title="Proposed Articles" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProposedArticles.aspx.cs" Inherits="WorldOfNews.Editor.ProposedArticles" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Proposed Articles</h1>
     <hr />
