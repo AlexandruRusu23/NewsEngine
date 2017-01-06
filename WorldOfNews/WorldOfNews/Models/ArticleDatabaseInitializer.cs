@@ -59,6 +59,7 @@ namespace WorldOfNews.Models
                     CategoryID = 5,
                     ArticleName = "Article number 1",
                     ImagePath = "image1.png",
+                    DatePublished = DateTime.Parse("12/10/2010"),
                     ArticleID = 1,
                     Description = "Description for article number 1 made by Initializer"
                 },
@@ -67,6 +68,7 @@ namespace WorldOfNews.Models
                     CategoryID = 4,
                     ArticleName = "Article number 2",
                     ImagePath = "image2.png",
+                    DatePublished = DateTime.Parse("12/17/2016"),
                     ArticleID = 2,
                     Description = "Description for article number 2 made by Initializer"
                 },
@@ -75,6 +77,7 @@ namespace WorldOfNews.Models
                     CategoryID = 3,
                     ArticleName = "Article number 3",
                     ImagePath = "image3.png",
+                    DatePublished = DateTime.Parse("1/2/2017"),
                     ArticleID = 3,
                     Description = "Description for article number 3 made by Initializer"
                 },
@@ -83,6 +86,7 @@ namespace WorldOfNews.Models
                     CategoryID = 2,
                     ArticleName = "Article number 4",
                     ImagePath = "image4.png",
+                    DatePublished = DateTime.Parse("10/2/2016"),
                     ArticleID = 4,
                     Description = "Description for article number 4 made by Initializer"
                 },
@@ -91,6 +95,7 @@ namespace WorldOfNews.Models
                     CategoryID = 1,
                     ArticleName = "Article number 5",
                     ImagePath = "image5.png",
+                    DatePublished = DateTime.Parse("6/22/2016"),
                     ArticleID = 5,
                     Description = "Description for article number 5 made by Initializer"
                 }

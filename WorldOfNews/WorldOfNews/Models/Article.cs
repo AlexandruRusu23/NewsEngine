@@ -18,7 +18,9 @@ namespace WorldOfNews.Models
         public string Description { get; set; }
 
         public string ImagePath { get; set; }
-        
+
+        public DateTime? DatePublished { get; set; }
+
         public int? CategoryID { get; set; }
 
         public virtual Category Category { get; set; }

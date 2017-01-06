@@ -24,7 +24,7 @@ namespace WorldOfNews
             if (categoryId.HasValue && categoryId > 0)
             {
                 query = query.Where(p => p.CategoryID == categoryId);
-                query = query.OrderBy(p => p.ArticleName);
+                query = query.OrderBy(p => p.DatePublished);
             }
 
             string searchInput;

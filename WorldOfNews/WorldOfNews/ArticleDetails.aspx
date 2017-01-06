@@ -13,6 +13,7 @@
                     </td>
                     <td>&nbsp;</td>  
                     <td style="vertical-align: top; text-align:left;">
+                        <b>Date:</b><br /><%#:Item.DatePublished %><br />
                         <b>Description:</b><br /><%#:Item.Description %><br /><span><b>Article Number:</b>&nbsp;<%#:Item.ArticleID %></span><br /></td>
                 </tr>
             </table>
