@@ -18,5 +18,7 @@ namespace WorldOfNews.Models
         public string Description { get; set; }
 
         public virtual ICollection<Article> Articles { get; set; }
+
+        public virtual ICollection<ExternArticle> ExternArticles { get; set; }
     }
 }

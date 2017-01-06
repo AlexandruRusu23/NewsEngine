@@ -388,6 +388,7 @@
     <Compile Include="Editor\AddArticles.cs" />
     <Compile Include="Editor\AddCategories.cs" />
     <Compile Include="Editor\AddComments.cs" />
+    <Compile Include="Editor\AddExternArticles.cs" />
     <Compile Include="Editor\EditorPage.aspx.cs">
       <DependentUpon>EditorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -15,24 +15,32 @@ namespace WorldOfNews.Editor
         {
             string articleAction = Request.QueryString["ArticleAction"];
             string categoryAction = Request.QueryString["CategoryAction"];
+            string externArticleAction = Request.QueryString["ExternArticleAction"];
             if (articleAction == "add")
             {
                 LabelAddStatus.Text = "Article added!";
             }
-
             if (articleAction == "remove")
             {
                 LabelRemoveStatus.Text = "Article removed!";
             }
 
-            if(categoryAction == "add")
+            if (externArticleAction == "add")
             {
-                LabelAddStatus.Text = "Category added!";
+                LabelAddExternStatus.Text = "Extern Article added!";
+            }
+            if (externArticleAction == "remove")
+            {
+                LabelRemoveExternStatus.Text = "Extern Article removed!";
             }
 
+            if (categoryAction == "add")
+            {
+                LabelAddCategoryStatus.Text = "Category added!";
+            }
             if(categoryAction == "remove")
             {
-                LabelRemoveStatus.Text = "Category removed!";
+                LabelRemoveCategoryStatus.Text = "Category removed!";
             }
         }
 
@@ -104,6 +112,58 @@ namespace WorldOfNews.Editor
             }
         }
 
+        protected void AddExternArticleButton_Click(object sender, EventArgs e)
+        {
+            Boolean fileOK = false;
+            String path = Server.MapPath("~/Images/");
+            if (ExternArticleImage.HasFile)
+            {
+                String fileExtension = System.IO.Path.GetExtension(ExternArticleImage.FileName).ToLower();
+                String[] allowedExtensions = { ".gif", ".png", ".jpeg", ".jpg" };
+                for (int i = 0; i < allowedExtensions.Length; i++)
+                {
+                    if (fileExtension == allowedExtensions[i])
+                    {
+                        fileOK = true;
+                    }
+                }
+            }
+
+            if (fileOK)
+            {
+                try
+                {
+                    // Save to Images folder.
+                    ExternArticleImage.PostedFile.SaveAs(path + ExternArticleImage.FileName);
+                    // Save to Images/Thumbs folder.
+                    ExternArticleImage.PostedFile.SaveAs(path + "Thumbs/" + ExternArticleImage.FileName);
+                }
+                catch (Exception ex)
+                {
+                    LabelAddExternStatus.Text = ex.Message;
+                }
+
+                // Add product data to DB.
+                AddExternArticles articles = new AddExternArticles();
+                bool addSuccess = articles.AddExternArticle(AddExternArticleName.Text, AddExternArticleLink.Text,
+                        DropDownAddExternCategory.SelectedValue, ExternArticleImage.FileName);
+                if (addSuccess)
+                {
+                    // Reload the page.
+                    string pageUrl = Request.Url.AbsoluteUri.Substring(0, Request.Url.AbsoluteUri.Count() - Request.Url.Query.Count());
+                    Response.Redirect(pageUrl + "?ExternArticleAction=add");
+                }
+                else
+                {
+                    LabelAddStatus.Text = "Unable to add new article to database.";
+                }
+            }
+            else
+            {
+                LabelAddStatus.Text = "Unable to accept file type.";
+            }
+        }
+
         public IQueryable GetCategories()
         {
             var _db = new WorldOfNews.Models.ArticleContext();
@@ -115,6 +175,13 @@ namespace WorldOfNews.Editor
         {
             var _db = new WorldOfNews.Models.ArticleContext();
             IQueryable query = _db.Articles;
+            return query;
+        }
+
+        public IQueryable GetExternArticles()
+        {
+            var _db = new WorldOfNews.Models.ArticleContext();
+            IQueryable query = _db.ExternArticles;
             return query;
         }
 
@@ -132,6 +199,28 @@ namespace WorldOfNews.Editor
                     // Reload the page.
                     string pageUrl = Request.Url.AbsoluteUri.Substring(0, Request.Url.AbsoluteUri.Count() - Request.Url.Query.Count());
                     Response.Redirect(pageUrl + "?ArticleAction=remove");
+                }
+                else
+                {
+                    LabelRemoveStatus.Text = "Unable to locate article.";
+                }
+            }
+        }
+
+        protected void RemoveExternArticleButton_Click(object sender, EventArgs e)
+        {
+            using (var _db = new WorldOfNews.Models.ArticleContext())
+            {
+                int articleId = Convert.ToInt16(DropDownRemoveExternArticle.SelectedValue);
+                var myItem = (from c in _db.ExternArticles where c.ArticleID == articleId select c).FirstOrDefault();
+                if (myItem != null)
+                {
+                    _db.ExternArticles.Remove(myItem);
+                    _db.SaveChanges();
+
+                    // Reload the page.
+                    string pageUrl = Request.Url.AbsoluteUri.Substring(0, Request.Url.AbsoluteUri.Count() - Request.Url.Query.Count());
+                    Response.Redirect(pageUrl + "?ExternArticleAction=remove");
                 }
                 else
                 {

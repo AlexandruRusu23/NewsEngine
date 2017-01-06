@@ -20,7 +20,7 @@ namespace WorldOfNews
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            Database.SetInitializer(new ArticleDatabaseInitializer());
+            //Database.SetInitializer(new ArticleDatabaseInitializer());
 
             RoleActions roleActions = new RoleActions();
             roleActions.AddUserAndRole("Admin23", "canAdmin@gmail.com", "Pa$$word1", "roleAdmin");
