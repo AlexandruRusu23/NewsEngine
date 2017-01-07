@@ -1,12 +1,54 @@
 ﻿<%@ Page Title="World of News" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WorldOfNews._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
+    
     <div class="jumbotron">
         <h1>World of News</h1>
         <p class="lead"> We're all about news for every category you could imagine. You can read the news, rate them, comment your thoughts and
         why not, create news by yourself.</p>
         <p><a href="ArticleList" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>
+
+    <div>
+        <h3>Recent Articles</h3>
+        <asp:ListView ID="ArticlesListView" DataSourceID="ArticlesDataSource" GroupItemCount="4" runat="server">
+        <LayoutTemplate>
+          <table cellpadding="2" width="100%" runat="server" id="RecentArticlesTable">
+            <tr runat="server" class="header">
+            </tr>
+            <tr runat="server" id="groupPlaceholder" />
+          </table>
+        </LayoutTemplate>
+        <GroupTemplate>
+          <tr runat="server" id="RecentArticlesRow">
+            <td runat="server" id="itemPlaceholder" />
+          </tr>
+        </GroupTemplate>
+        <GroupSeparatorTemplate>
+          <tr runat="server">
+            <td colspan="3"><hr /></td>
+          </tr>
+        </GroupSeparatorTemplate>
+        <ItemTemplate>
+          <td align="center" style="width:300px" runat="server">
+            <a href='<%# "ArticleDetails.aspx?articleID=" + Eval("ArticleID") %>'>
+                <asp:Image Width="140px" Height="110px" ID="ArticleImage" runat="server" ImageUrl='<%# "~/Images/" + Eval("ImagePath") %>' />
+            </a>
+            <br />
+            <asp:HyperLink ID="ArticleLink" runat="server" Text='<%# Eval("ArticleName") %>' NavigateUrl='<%# "ArticleDetails.aspx?articleID=" + Eval("ArticleID") %>' />
+            <br />
+          </td>
+        </ItemTemplate>
+        <ItemSeparatorTemplate>
+          <td class="separator" runat="server">&nbsp;</td>
+        </ItemSeparatorTemplate>
+      </asp:ListView>
+      <br />
+
+      <asp:SqlDataSource ID="ArticlesDataSource" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:DefaultConnection%>"
+        SelectCommand="SELECT ArticleID, ArticleName, ImagePath FROM Articles ORDER BY DatePublished DESC;">
+      </asp:SqlDataSource>
     </div>
 
     <div class="row">

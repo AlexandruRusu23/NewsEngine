@@ -146,6 +146,7 @@ namespace WorldOfNews.Models
                     ArticleID = 1,
                     ArticleName = "Clubul dorit de Gigi Becali, patronat de un om de afaceri sirian",
                     Link = "http://www.digisport.ro/Sport/FOTBAL/Competitii/Liga+1/Clubul+dorit+de+Gigi+Becali+patronat+de+un+om+de+afaceri+sirian",
+                    DatePublished = DateTime.Parse("12/29/2016"),
                     ImagePath = "gigi.jpg",
                     CategoryID = 4
                 }

@@ -8,12 +8,13 @@ namespace WorldOfNews.Editor
 {
     public class AddArticles
     {
-        public bool AddArticle(string ArticleName, string ArticleDescription, string ArticleCategory, string ArticleImagePath)
+        public bool AddArticle(string ArticleName, string ArticleDescription, DateTime ArticleDate, string ArticleCategory, string ArticleImagePath)
         {
             var myArticle = new Article();
             myArticle.ArticleName = ArticleName;
             myArticle.Description = ArticleDescription;
             myArticle.ImagePath = ArticleImagePath;
+            myArticle.DatePublished = ArticleDate;
             myArticle.CategoryID = Convert.ToInt32(ArticleCategory);
 
             using (ArticleContext _db = new ArticleContext())

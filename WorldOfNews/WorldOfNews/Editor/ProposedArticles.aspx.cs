@@ -24,7 +24,7 @@ namespace WorldOfNews.Editor
                 string myCategoryID = ProposedArticlesDetails.Rows[5].Cells[1].Text;
 
                 AddArticles articles = new AddArticles();
-                bool addSuccess = articles.AddArticle(myArticleName, myDescription,
+                bool addSuccess = articles.AddArticle(myArticleName, myDescription, DateTime.UtcNow,
                         myCategoryID, myImagePath);
                 if (addSuccess)
                 {

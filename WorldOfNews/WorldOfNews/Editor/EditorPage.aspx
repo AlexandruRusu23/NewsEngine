@@ -63,6 +63,20 @@
             </td>
         </tr>
         <tr>
+            <td><asp:Label ID="LabelAddDate" runat="server">Date:</asp:Label></td>
+            <td>
+                <asp:UpdatePanel runat="server">
+                    <ContentTemplate>
+                        <asp:Calendar ID="AddArticleDate" SelectedMode="Day" ShowGridLines="true" OnSelectionChanged="AddArticleDate_SelectionChanged" runat="server">
+                            <SelectedDayStyle BackColor="Yellow"
+                                   ForeColor="Red">
+                            </SelectedDayStyle>
+                        </asp:Calendar>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </td>
+        </tr>
+        <tr>
             <td><asp:Label ID="LabelAddImageFile" AssociatedControlID="ArticleImage" runat="server">Image File:</asp:Label></td>
             <td>
                 <asp:FileUpload ID="ArticleImage" runat="server" />
@@ -114,8 +128,22 @@
         <tr>
             <td><asp:Label ID="LabelAddExternLink" AssociatedControlID="AddExternArticleLink" runat="server">Link:</asp:Label></td>
             <td>
-                <asp:TextBox ID="AddExternArticleLink" Width="350px" Height="50px" runat="server"></asp:TextBox>
+                <asp:TextBox ID="AddExternArticleLink" Width="350px" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator CssClass="text-danger" runat="server" ControlToValidate="AddExternArticleLink" ErrorMessage="The link field is required." ValidationGroup="addExternArticleGroup"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td><asp:Label ID="LabelAddExternDate" runat="server">Date:</asp:Label></td>
+            <td>
+                <asp:UpdatePanel runat="server">
+                    <ContentTemplate>
+                        <asp:Calendar ID="AddExternArticleDate" SelectedMode="Day" ShowGridLines="true" OnSelectionChanged="AddExternArticleDate_SelectionChanged" runat="server">
+                            <SelectedDayStyle BackColor="Yellow"
+                                   ForeColor="Red">
+                            </SelectedDayStyle>
+                        </asp:Calendar>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
             </td>
         </tr>
         <tr>
@@ -132,7 +160,7 @@
     <asp:Label ID="LabelAddExternStatus" runat="server" Text=""></asp:Label>
     <p></p>
     <br />
-    <h3>Remove Article:</h3>
+    <h3>Remove Extern Article:</h3>
     <table class="table">
         <tr>
             <td><asp:Label ID="LabelRemoveExternArticle" runat="server">Extern Article:</asp:Label>

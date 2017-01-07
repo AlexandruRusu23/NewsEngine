@@ -17,6 +17,8 @@ namespace WorldOfNews.Models
         [Required, Display(Name = "Article Link")]
         public string Link { get; set; }
 
+        public DateTime? DatePublished { get; set; }
+
         public string ImagePath { get; set; }
 
         public int? CategoryID { get; set; }

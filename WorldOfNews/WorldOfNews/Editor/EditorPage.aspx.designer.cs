@@ -139,6 +139,24 @@ namespace WorldOfNews.Editor {
         protected global::System.Web.UI.WebControls.TextBox AddArticleDescription;
         
         /// <summary>
+        /// LabelAddDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelAddDate;
+        
+        /// <summary>
+        /// AddArticleDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar AddArticleDate;
+        
+        /// <summary>
         /// LabelAddImageFile control.
         /// </summary>
         /// <remarks>
@@ -263,6 +281,24 @@ namespace WorldOfNews.Editor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox AddExternArticleLink;
+        
+        /// <summary>
+        /// LabelAddExternDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelAddExternDate;
+        
+        /// <summary>
+        /// AddExternArticleDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar AddExternArticleDate;
         
         /// <summary>
         /// LabelAddExternImage control.

@@ -2,19 +2,28 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <section>
         <div>
+            <hgroup>
+                <h2><%: Page.Title %></h2>
+            </hgroup>
+
+            <div>
             <div style="float:right">
             <asp:Button CssClass="btn btn-success" runat="server" Text="Search" OnClick="SearchArticles_Click"/></div>
             <div style="float:right; margin-right:5px">
                 <asp:TextBox ID="searchTextBox" ValidationGroup="searchGroup" CssClass="form-control" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator CssClass="text-danger" runat="server" ControlToValidate="searchTextBox" ValidationGroup="searchGroup" ErrorMessage="Search field can not be empty."></asp:RequiredFieldValidator>
             </div>
-        </div>
+            </div>
 
-        <div>
-            <hgroup>
-                <h2><%: Page.Title %></h2>
-            </hgroup>
-            <br />
+            <asp:DropDownList ID="OrderArticlesDropDownMenu" Width="20%" OnSelectedIndexChanged="OrderArticlesDropDownMenu_SelectedIndexChanged" AutoPostBack="true" CssClass="form-control" runat="server">
+                <asp:ListItem Text="Order articles"></asp:ListItem>
+                <asp:ListItem Text="A to Z"></asp:ListItem>
+                <asp:ListItem Text="Z to A"></asp:ListItem>
+                <asp:ListItem Text="From New to Old"></asp:ListItem>
+                <asp:ListItem Text="From Old to New"></asp:ListItem>
+            </asp:DropDownList>
+            <p></p>
+            <hr />
             <asp:ListView ID="articleList" runat="server"
                 DataKeyNames="ArticleID" GroupItemCount="4"
                 ItemType="WorldOfNews.Models.Article" SelectMethod="GetArticles">

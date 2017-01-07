@@ -8,12 +8,13 @@ namespace WorldOfNews.Editor
 {
     public class AddExternArticles
     {
-        public bool AddExternArticle(string ArticleName, string ArticleLink, string ArticleCategory, string ArticleImagePath)
+        public bool AddExternArticle(string ArticleName, string ArticleLink, DateTime ArticleDate, string ArticleCategory, string ArticleImagePath)
         {
             var myArticle = new ExternArticle();
             myArticle.ArticleName = ArticleName;
             myArticle.Link = ArticleLink;
             myArticle.ImagePath = ArticleImagePath;
+            myArticle.DatePublished = ArticleDate;
             myArticle.CategoryID = Convert.ToInt32(ArticleCategory);
 
             using (ArticleContext _db = new ArticleContext())

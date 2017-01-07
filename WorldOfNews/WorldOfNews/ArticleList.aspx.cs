@@ -24,7 +24,6 @@ namespace WorldOfNews
             if (categoryId.HasValue && categoryId > 0)
             {
                 query = query.Where(p => p.CategoryID == categoryId);
-                query = query.OrderBy(p => p.DatePublished);
             }
 
             string searchInput;
@@ -34,6 +33,21 @@ namespace WorldOfNews
             {
                 query = query.Where(p => (p.ArticleName.Contains(searchInput) || p.Description.Contains(searchInput) ));
                 Session["searchInput"] = "";
+            }
+
+            string orderingInput;
+            orderingInput = (string)Session["orderingInput"];
+
+            switch (orderingInput)
+            {
+                case "A to Z":
+                    return query.OrderBy(p => p.ArticleName);
+                case "Z to A":
+                    return query.OrderByDescending(p => p.ArticleName);
+                case "From Old to New":
+                    return query.OrderBy(p => p.DatePublished);
+                case "From New to Old":
+                    return query.OrderByDescending(p => p.DatePublished);
             }
 
             return query;
@@ -50,12 +64,27 @@ namespace WorldOfNews
             }
 
             string searchInput;
-            searchInput = (string)Session["searchInput"];
+            searchInput = (string)Session["searchInput2"];
 
             if (!string.IsNullOrEmpty(searchInput))
             {
                 query = query.Where(p => (p.ArticleName.Contains(searchInput)));
-                Session["searchInput"] = "";
+                Session["searchInput2"] = "";
+            }
+
+            string orderingInput;
+            orderingInput = (string)Session["orderingInput"];
+
+            switch (orderingInput)
+            {
+                case "A to Z":
+                    return query.OrderBy(p => p.ArticleName);
+                case "Z to A":
+                    return query.OrderByDescending(p => p.ArticleName);
+                case "From Old to New":
+                    return query.OrderBy(p => p.DatePublished);
+                case "From New to Old":
+                    return query.OrderByDescending(p => p.DatePublished);
             }
 
             return query;
@@ -64,7 +93,14 @@ namespace WorldOfNews
         protected void SearchArticles_Click(object sender, EventArgs e)
         {
             Session["searchInput"] = searchTextBox.Text;
+            Session["searchInput2"] = searchTextBox.Text;
             searchTextBox.Text = "";
+            Response.Redirect(Request.RawUrl);
+        }
+
+        protected void OrderArticlesDropDownMenu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Session["orderingInput"] = OrderArticlesDropDownMenu.SelectedValue.ToString();
             Response.Redirect(Request.RawUrl);
         }
     }

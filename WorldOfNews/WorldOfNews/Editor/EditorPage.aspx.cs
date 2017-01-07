@@ -42,6 +42,8 @@ namespace WorldOfNews.Editor
             {
                 LabelRemoveCategoryStatus.Text = "Category removed!";
             }
+            AddArticleDate.SelectedDate = DateTime.Today;
+            AddExternArticleDate.SelectedDate = DateTime.Today;
         }
 
         protected void AddCategoryButton_Click(object sender, EventArgs e)
@@ -93,7 +95,7 @@ namespace WorldOfNews.Editor
 
                 // Add product data to DB.
                 AddArticles articles = new AddArticles();
-                bool addSuccess = articles.AddArticle(AddArticleName.Text, AddArticleDescription.Text,
+                bool addSuccess = articles.AddArticle(AddArticleName.Text, AddArticleDescription.Text, AddArticleDate.SelectedDate,
                         DropDownAddCategory.SelectedValue, ArticleImage.FileName);
                 if (addSuccess)
                 {
@@ -145,7 +147,7 @@ namespace WorldOfNews.Editor
 
                 // Add product data to DB.
                 AddExternArticles articles = new AddExternArticles();
-                bool addSuccess = articles.AddExternArticle(AddExternArticleName.Text, AddExternArticleLink.Text,
+                bool addSuccess = articles.AddExternArticle(AddExternArticleName.Text, AddExternArticleLink.Text, AddExternArticleDate.SelectedDate,
                         DropDownAddExternCategory.SelectedValue, ExternArticleImage.FileName);
                 if (addSuccess)
                 {
@@ -267,6 +269,16 @@ namespace WorldOfNews.Editor
                     LabelRemoveStatus.Text += "No category found.";
                 }
             }
+        }
+
+        protected void AddArticleDate_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void AddExternArticleDate_SelectionChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
